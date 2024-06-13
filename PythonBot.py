@@ -3,8 +3,20 @@ from twilio.twiml.messaging_response import MessagingResponse
 import PyPDF2
 from twilio.rest import Client
 
+import sqlite3
+import os 
 
 #New idea to add to the bot , you can experiment with a sqlLite https://www.askpython.com/python-modules/python-sqlite-module
+
+
+'''
+This part is for the data base
+'''
+
+
+
+#------------------------------
+
 
 app = Flask(__name__)
 MenuTest = 'C://Users//robo1//OneDrive//Documentos//PythonTestApril//MenuTest.pdf'
@@ -16,7 +28,6 @@ def enviar_pdf_whatsapp(sender_number):
         from_='whatsapp:+',
         body='Aquí tienes el archivo PDF que solicitaste.',
         to='whatsapp:' + sender_number,
-        media_url=[MenuTest]  # Especifica la URL del archivo PDF
     )
 
     print("Mensaje enviado correctamente!")
