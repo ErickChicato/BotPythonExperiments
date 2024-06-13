@@ -4,10 +4,9 @@ import PyPDF2
 from twilio.rest import Client
 
 
-
+#New idea to add to the bot , you can experiment with a sqlLite https://www.askpython.com/python-modules/python-sqlite-module
 
 app = Flask(__name__)
-
 MenuTest = 'C://Users//robo1//OneDrive//Documentos//PythonTestApril//MenuTest.pdf'
 
 
@@ -43,7 +42,7 @@ def wa_sms_reply():
     elif msg == "1":
         reply.body("Este es el menu  😎")
         # Send the PDF file
-        enviar_pdf_whatsapp(request.form.get('From')) #from amazon
+        enviar_pdf_whatsapp(request.form.get('From')) #from amazon ? you can use another technology
         return str(resp)
     elif msg == "2":
         reply.body("Ahora vamos a seleccionar el platillo 😉")
